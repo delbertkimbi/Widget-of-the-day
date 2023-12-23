@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/widgets/expanded.dart';
 
 class HomeData extends StatelessWidget {
   final String widgetName;
   final int widgetNumber;
+  final Widget destinationWidget;
   const HomeData({
     super.key,
     required this.widgetName,
-    required this.widgetNumber,
+    required this.widgetNumber, required this.destinationWidget,
   });
 
   @override
@@ -29,7 +29,7 @@ class HomeData extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const ExpandedPage(),
+                builder: (context) =>  destinationWidget,
               ),
             );
           },
