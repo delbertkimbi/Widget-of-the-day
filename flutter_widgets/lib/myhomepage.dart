@@ -3,6 +3,7 @@ import 'package:flutter_widgets/homedata.dart';
 import 'package:flutter_widgets/widgets/column_row.dart';
 import 'package:flutter_widgets/widgets/container.dart';
 import 'package:flutter_widgets/widgets/expanded.dart';
+import 'package:flutter_widgets/widgets/listview.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -19,6 +20,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<Widget> pages = [
+    const ContainerPage(),
+    const ExpandedPage(),
+    const ColumRowPage(),
+    const ListviewPage(),
+  ];
+  List<String> names = [
+    "Container",
+    "Expanded",
+    "Colum/Row",
+    "Listview",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,51 +110,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
 
-                /// Data get
-                const Row(
-                  children: [
-                    Column(
-                      children: [
-                        HomeData(
-                          widgetName: "Container",
-                          widgetNumber: 1,
-                          destinationWidget: ContainerPage(),
-                        ),
-                        HomeData(
-                          widgetName: "Expanded",
-                          widgetNumber: 2,
-                          destinationWidget: ExpandedPage(),
-                        ),
-                        HomeData(
-                          widgetName: "Column/Row",
-                          widgetNumber: 3,
-                          destinationWidget: ColumRowPage(),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        HomeData(
-                          widgetName: "Container",
-                          widgetNumber: 1,
-                          destinationWidget: ContainerPage(),
-                        ),
-                        HomeData(
-                          widgetName: "Expanded",
-                          widgetNumber: 2,
-                          destinationWidget: ExpandedPage(),
-                        ),
-                        HomeData(
-                          widgetName: "Column/Row",
-                          widgetNumber: 3,
-                          destinationWidget: ColumRowPage(),
-                        ),
-                      ],
-                    ),
-                  ],
+                /// Data get using listview.builder widget
+                ListView.builder(
+                  itemCount: pages.length,
+                  itemBuilder: (context, index) {
+                    return HomeData(
+                      widgetName: names[index],
+                      widgetNumber: index + 1,
+                      destinationWidget: pages[index],
+                    );
+                  },
                 ),
               ],
             ),
