@@ -3,17 +3,16 @@ import 'package:flutter_widgets/homedata.dart';
 import 'package:flutter_widgets/widgets/column_row.dart';
 import 'package:flutter_widgets/widgets/container.dart';
 import 'package:flutter_widgets/widgets/expanded.dart';
+import 'package:flutter_widgets/widgets/gestures.dart';
 import 'package:flutter_widgets/widgets/listview.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
-  final String widgetName;
-  final int widgetNumber;
-  const MyHomePage(
-      {super.key, // Declare a key
-      required this.title,
-      required this.widgetName,
-      required this.widgetNumber}); // Pass the key to the super constructor
+
+  const MyHomePage({
+    super.key, // Declare a key
+    required this.title,
+  }); // Pass the key to the super constructor
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -25,12 +24,14 @@ class _MyHomePageState extends State<MyHomePage> {
     const ExpandedPage(),
     const ColumRowPage(),
     const ListviewPage(),
+    const GesturesPage(),
   ];
   List<String> names = [
     "Container",
     "Expanded",
     "Colum/Row",
     "Listview",
+    "GestureDetection",
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         backgroundColor: Colors.blueAccent,
+
         // Making the appbar have circular radius
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
@@ -86,11 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               border: Border.all(
                                 color: Colors.blue,
                                 width: 5,
-                              ),
-                              image: const DecorationImage(
-                                /// A network image here
-                                image: NetworkImage(
-                                    "https://www.google.com/search?q=3d+images+without+background+for+my+learning+app&client=ubuntu-chr&hs=wC7&sca_esv=593113537&tbm=isch&sxsrf=AM9HkKkey6AinRRTKhTCEQnsifHLv2Z7ww:1703261685402&source=lnms&sa=X&ved=2ahUKEwi44t6duKODAxUvQkEAHc4NDcQQ_AUoAXoECAIQAw&biw=1474&bih=723&dpr=1#imgrc=0bLixX3Re2E0xM"),
                               ),
                             ),
                             child: const Center(

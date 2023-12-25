@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ListviewPage extends StatelessWidget {
   const ListviewPage({super.key});
 
@@ -53,16 +52,19 @@ class Squares extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 400,
-        color: Colors.deepPurple,
-        child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          height: 300,
+          color: Colors.deepPurple,
+          child: Center(
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
