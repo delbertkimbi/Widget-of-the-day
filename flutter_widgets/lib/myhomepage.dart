@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/homedata.dart';
+import 'package:flutter_widgets/widgets/animation.dart';
 import 'package:flutter_widgets/widgets/column_row.dart';
 import 'package:flutter_widgets/widgets/container.dart';
 import 'package:flutter_widgets/widgets/expanded.dart';
@@ -25,6 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const ColumRowPage(),
     const ListviewPage(),
     const GesturesPage(),
+    const AnimatedPage(),
   ];
   List<String> names = [
     "Container",
@@ -32,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Colum/Row",
     "Listview",
     "GestureDetection",
+    "AnimatedWidget",
   ];
   @override
   Widget build(BuildContext context) {

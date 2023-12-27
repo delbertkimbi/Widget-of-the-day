@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(
         title: 'Widget of the day',
-
       ),
     );
   }
