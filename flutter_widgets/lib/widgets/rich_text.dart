@@ -8,6 +8,8 @@ class RichTextPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             height: 300,
@@ -31,7 +33,7 @@ class RichTextPage extends StatelessWidget {
                 )
               ]),
             ),
-            
+
           )
         ],
       ),
