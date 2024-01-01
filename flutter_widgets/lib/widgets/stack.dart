@@ -7,7 +7,7 @@ class StackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stack Page"),
+        title:const Text("Stack Page"),
         centerTitle: true,
         elevation: 0,
       ),
