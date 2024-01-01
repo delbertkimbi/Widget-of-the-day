@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
 
-class AlertdialogPage extends StatelessWidget {
+class AlertdialogPage extends StatefulWidget {
   const AlertdialogPage({super.key});
-  Widget showDialog() {
-    return const AlertDialog(
-      backgroundColor: Colors.deepOrange,
-      title: Text("First Dialog"),
-      content: Text("I love flutter so much."),
 
-      actions: [
-        Text("Ok"),
-        Text("Cancel"),
-      ],
-    );
+  @override
+  State<AlertdialogPage> createState() => _AlertdialogPageState();
+}
+
+class _AlertdialogPageState extends State<AlertdialogPage> {
+  void showmeDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: Colors.deepOrange,
+            title: const Text("First Dialog"),
+            content: const Text("I love flutter so much."),
+            actions: [
+              MaterialButton(
+                onPressed: () {},
+                child:const Text("OK"),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child:const Text("Cancil"),
+              )
+            ],
+          );
+        });
   }
 
   @override
@@ -26,7 +43,7 @@ class AlertdialogPage extends StatelessWidget {
       body: Center(
         child: MaterialButton(
           color: Colors.deepPurple[200],
-          onPressed: showDialog,
+          onPressed: showmeDialog,
           child: const Padding(
             padding: EdgeInsets.all(15.0),
             child: Text(
