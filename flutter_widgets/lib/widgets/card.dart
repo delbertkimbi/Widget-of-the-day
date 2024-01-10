@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CardPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _CardPageState extends State<CardPage> {
                 onPressed: () {
                   funcClickedTimes();
                 },
-                child:const Text(
+                child: const Text(
                   "Click",
                   style: TextStyle(
                     color: Colors.blue,
